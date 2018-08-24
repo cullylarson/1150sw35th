@@ -1,4 +1,4 @@
-import {scrollTop} from '@app/lib/scroll'
+import {scrollTop} from '@common/lib/scroll'
 import * as api from './api'
 import * as actionTypes from './action-types'
 
@@ -39,10 +39,7 @@ export function sendForm(fields) {
 
         const state = getState()
 
-        api.sendForm({
-            apiUrl: state.config.apiUrl,
-            ...fields,
-        })
+        api.sendForm(state.config.api.baseUrl, fields)
             .then(data => {
                 if(!data.success) dispatch(sendFormFailure(data.errors, data.paramErrors))
                 else dispatch(sendFormSuccess(data.account))

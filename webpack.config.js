@@ -20,7 +20,7 @@ module.exports = (_, argv) => {
             resolve: {
                 alias: {
                     '@app': path.resolve(__dirname, 'client'),
-                    '@common': path.resolve(__dirname, 'client/style'),
+                    '@common': path.resolve(__dirname, 'common'),
                 },
             },
             module: {
@@ -31,6 +31,20 @@ module.exports = (_, argv) => {
                         use: [
                             'babel-loader',
                             'eslint-loader',
+                        ],
+                    },
+                    {
+                        test: /\.css$/,
+                        use: [
+                            'style-loader',
+                            {
+                                loader: 'css-loader',
+                                options: {
+                                    importLoaders: 1,
+                                    sourceMap: devMode,
+                                }
+                            },
+                            'postcss-loader?' + (devMode ? 'sourceMap' : ''),
                         ],
                     },
                 ],

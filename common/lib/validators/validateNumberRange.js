@@ -1,0 +1,8 @@
+const {curry} = require('ramda')
+const {messageObj} = require('@common/lib/messages')
+
+module.exports = curry((smallest, largest, value, params) => {
+    return value < smallest || value > largest
+        ? Promise.resolve(messageObj('too-small', `Please provide a value between ${smallest} and ${largest}.`))
+        : Promise.resolve(null)
+})

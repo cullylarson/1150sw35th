@@ -1,8 +1,11 @@
 {
-    db: {
-        host: '',
-        user: '',
-        pass: '',
-        port: 3306
+    "db": {
+        "host": "",
+        "user": "",
+        "pass": "",
+        "name": ""
+    },
+    "api": {
+        "baseUrl": ""
     }
 }

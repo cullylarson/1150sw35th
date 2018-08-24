@@ -1,9 +1,9 @@
-import {responseData} from '@app/lib/request'
+import {responseData} from '@common/lib/request'
 
 export function sendForm(apiUrl, data) {
     const query = data
 
-    return fetch(`${apiUrl}`, {
+    return fetch(`${apiUrl}/submit`, {
         method: 'post',
         body: JSON.stringify(query),
         headers: {
