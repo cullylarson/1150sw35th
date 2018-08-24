@@ -1,0 +1,23 @@
+{
+  "presets": ["react", ["env", {
+    "useBuiltIns": true,
+    "shippedProposals": true,
+    "modules": false,
+    "targets": {
+      "browsers": [
+        "last 2 versions"
+      ]
+    }
+  }]],
+  "env": {
+    "test": {
+      "presets": ["env", "react"]
+    }
+  },
+  "plugins": [
+    "syntax-dynamic-import",
+    "transform-object-rest-spread",
+    "babel-plugin-transform-class-properties",
+    "transform-runtime"
+  ]
+}

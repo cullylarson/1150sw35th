@@ -1,0 +1,46 @@
+{
+    "name": "stratum-admin",
+    "version": "0.0.1",
+    "description": "The administration area of many of the Stratum projects.",
+    "scripts": {
+        "server:start": "NODE_ENV=production node server/app.js",
+        "server:watch": "forever --watch --minUptime 2000 --spinSleepTime 5000 --watchDirectory='./server/' server/app.js",
+        "client:clean": "rm -rf build/client",
+        "client:build": "npm run client:clean && webpack --mode production",
+        "client:dev": "npm run client:clean && webpack --mode development",
+        "client:watch": "npm run client:clean && webpack --mode development --progress --colors --watch"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/cullylarson/1150sw35th"
+    },
+    "author": "Cully Larson <cully.larson@gmail.com>",
+    "dependencies": {
+        "express": "^4.16.3",
+        "ramda": "^0.25.0"
+    },
+    "devDependencies": {
+        "babel-core": "^6.26.3",
+        "babel-eslint": "^8.2.3",
+        "babel-loader": "^7.1.4",
+        "babel-plugin-transform-class-properties": "^6.24.1",
+        "babel-plugin-transform-object-rest-spread": "^6.26.0",
+        "babel-plugin-transform-runtime": "^6.23.0",
+        "babel-preset-env": "^1.7.0",
+        "babel-preset-react": "^6.24.1",
+        "eslint": "^4.19.1",
+        "eslint-config-standard-react": "^6.0.0",
+        "eslint-loader": "^2.0.0",
+        "eslint-plugin-react": "^7.8.2",
+        "forever": "^0.15.3",
+        "react": "^16.4.1",
+        "react-dom": "^16.4.1",
+        "react-redux": "^5.0.7",
+        "redux": "^4.0.0",
+        "redux-thunk": "^2.3.0",
+        "standard": "^11.0.1",
+        "webpack": "^4.8.3",
+        "webpack-cli": "^2.1.4",
+        "webpack-manifest-plugin": "^2.0.3"
+    }
+}
