@@ -6,6 +6,7 @@ const initialState = {
         email: '',
     },
     send: {
+        success: false,
         doing: false,
         errors: [],
         paramErrors: {},
@@ -28,10 +29,6 @@ const actionsMap = {
         }
     },
 
-    [actionTypes.CLEAR_FORM]: (state, action) => {
-        return initialState
-    },
-
     [actionTypes.SEND_FORM_REQUEST]: (state, action) => {
         return {
             ...state,
@@ -46,12 +43,10 @@ const actionsMap = {
 
     [actionTypes.SEND_FORM_SUCCESS]: (state, action) => {
         return {
-            ...state,
+            ...initialState,
             send: {
-                ...state.send,
-                doing: false,
-                errors: [],
-                paramErrors: {},
+                ...initialState.send,
+                success: true,
             },
         }
     },

@@ -25,10 +25,8 @@ const Form = ({form, actions}) => {
 
     const setField = (name) => e => actions.setFormField(name, e.currentTarget.value)
 
-    return (
-        <div className='container'><div className='row'><div className='col-sm'>
-            <Messages error={form.send.errors} />
-
+    const renderForm = () => {
+        return (
             <form onSubmit={handleSubmit}>
                 <FormText
                     name='name'
@@ -46,6 +44,18 @@ const Form = ({form, actions}) => {
                 />
                 <button type='submit' className='btn btn-primary'>Submit</button>
             </form>
+        )
+    }
+
+    const renderSuccess = () => {
+        return <Messages success={['Thank you for submitting an application! We will be in touch with you very soon.']} />
+    }
+
+    return (
+        <div className='container'><div className='row'><div className='col-sm'>
+            <Messages error={form.send.errors} />
+
+            {form.send.success ? renderSuccess() : renderForm()}
         </div></div></div>
     )
 }

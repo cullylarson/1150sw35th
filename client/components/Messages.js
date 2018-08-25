@@ -9,15 +9,15 @@ export default ({error, success}) => {
     const renderSet = (classNames, messages) => {
         return (
             <span>
-                {messages.map((x, i) => <div className='alert alert-danger' key={i}>{getMessage(x)}</div>)}
+                {messages.map((x, i) => <div className={classNames} key={i}>{getMessage(x)}</div>)}
             </span>
         )
     }
 
     return (
         <span>
-            {error && error.length ? renderSet('messages messages-error', error) : ''}
-            {success && success.length ? renderSet('messages messages-success', success) : ''}
+            {error && error.length ? renderSet('alert alert-danger', error) : ''}
+            {success && success.length ? renderSet('alert alert-success', success) : ''}
         </span>
     )
 }

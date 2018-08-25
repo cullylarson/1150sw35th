@@ -10,12 +10,6 @@ export function setFormField(name, value) {
     }
 }
 
-export function clearForm() {
-    return {
-        type: actionTypes.CLEAR_FORM,
-    }
-}
-
 function sendFormRequest() {
     return {
         type: actionTypes.SEND_FORM_REQUEST,
