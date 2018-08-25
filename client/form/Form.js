@@ -70,50 +70,6 @@ const Form = ({form, actions}) => {
         )
     }
 
-    const renderPetRow = (i) => {
-        return (
-            <div className='row many-row'>
-                <div className='col-md-4'>
-                    <FormText
-                        name={`pet${i}Name`}
-                        title='Name'
-                        value={form.fields[`pet${i}Name`]}
-                        onChange={setField(`pet${i}Name`)}
-                        errors={get(`pet${i}Name`, [], paramErrors)}
-                    />
-                </div>
-                <div className='col-md-4'>
-                    <FormText
-                        name={`pet${i}Type`}
-                        title='Type/Breed'
-                        value={form.fields[`pet${i}Type`]}
-                        onChange={setField(`pet${i}Type`)}
-                        errors={get(`pet${i}Type`, [], paramErrors)}
-                    />
-                </div>
-                <div className='col-md-2'>
-                    <FormRadioList
-                        name={`pet${i}IndoorOutdoor`}
-                        title='Indoor/Outdoor'
-                        options={{'Indoor': 'Indoor', 'Outdoor': 'Outdoor'}}
-                        value={form.fields[`pet${i}IndoorOutdoor`]}
-                        onChange={setField(`pet${i}IndoorOutdoor`)}
-                        errors={get(`pet${i}IndoorOutdoor`, [], paramErrors)}
-                    />
-                </div>
-                <div className='col-md-2'>
-                    <FormText
-                        name={`pet${i}Age`}
-                        title='Age'
-                        value={form.fields[`pet${i}Age`]}
-                        onChange={setField(`pet${i}Age`)}
-                        errors={get(`pet${i}Age`, [], paramErrors)}
-                    />
-                </div>
-            </div>
-        )
-    }
-
     const renderVehicleRow = (i) => {
         return (
             <div className='row many-row'>
@@ -725,14 +681,6 @@ const Form = ({form, actions}) => {
                             {renderOccupantRow(2)}
                             {renderOccupantRow(3)}
                             {renderOccupantRow(4)}
-                        </div>
-                    </div>
-                    <div className='card'>
-                        <div className='card-header'><h4>Pets</h4></div>
-                        <div className='card-body'>
-                            {renderPetRow(1)}
-                            {renderPetRow(2)}
-                            {renderPetRow(3)}
                         </div>
                     </div>
                     <div className='card'>
