@@ -1100,7 +1100,7 @@ const Form = ({form, actions}) => {
                         </div>
                     </div>
                     <div className='row'><div className='col-sm'>
-                        <button type='submit' className='btn btn-primary' disabled={disabled}>Submit</button>
+                        <button type='submit' className='btn btn-primary' disabled={disabled}>Submit Application</button>
                     </div></div>
                 </form>
             </div>
