@@ -198,5 +198,5 @@ module.exports = {
                     .status(500)
                     .json(responseError(messageObj('database-error', 'Something went wrong and your application could not be submitted. Please try again.' + _)))
             })
-    }
+    },
 }

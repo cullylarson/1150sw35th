@@ -19,6 +19,8 @@
     },
     "author": "Cully Larson <cully.larson@gmail.com>",
     "dependencies": {
+        "date-fns": "^1.29.0",
+        "escape-html": "^1.0.3",
         "express": "^4.16.3",
         "module-alias": "^2.1.0",
         "mysql": "^2.16.0",

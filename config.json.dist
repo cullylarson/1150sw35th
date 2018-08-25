@@ -11,5 +11,7 @@
     "contact": {
         "email": "",
         "phone": ""
-    }
+    },
+    "notify": [
+    ]
 }

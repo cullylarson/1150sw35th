@@ -5,6 +5,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const {createPool} = require('mysql')
 const apiController = require('./api-controller')
+const entryController = require('./entry-controller')
 const port = process.env.PORT || 3020
 const app = express()
 
@@ -67,6 +68,7 @@ const clientConfig = {
         baseUrl: formatApiUrl(config.api.baseUrl),
     },
     contact: config.contact,
+    notify: config.notify,
 }
 
 const staticPath = path.resolve(__dirname, '../build/client/')
@@ -75,6 +77,7 @@ const staticPath = path.resolve(__dirname, '../build/client/')
 app.use(express.static(staticPath))
 
 app.post('/api/submit', bodyParser.json(), apiController.submit(pool))
+app.get('/view/:publicId', entryController.view(pool))
 
 // all other paths defer to the SPA
 app.get('*', (req, res) => {

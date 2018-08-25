@@ -190,7 +190,7 @@ const Form = ({form, actions}) => {
                 <div className='col-md-4'>
                     <FormText
                         name={`${kindShort}${i}Phone1`}
-                        title='Phone'
+                        title='Phone #'
                         value={form.fields[`${kindShort}${i}Phone1`]}
                         onChange={setField(`${kindShort}${i}Phone1`)}
                         errors={get(`${kindShort}${i}Phone1`, [], paramErrors)}
@@ -199,7 +199,7 @@ const Form = ({form, actions}) => {
                 <div className='col-md-4'>
                     <FormText
                         name={`${kindShort}${i}Phone2`}
-                        title='Phone'
+                        title='Alternative Phone #'
                         value={form.fields[`${kindShort}${i}Phone2`]}
                         onChange={setField(`${kindShort}${i}Phone2`)}
                         errors={get(`${kindShort}${i}Phone2`, [], paramErrors)}
@@ -1090,7 +1090,7 @@ const Form = ({form, actions}) => {
                                 <div className='col-md-6'>
                                     <FormYesNo
                                         name={'finalConfirmation'}
-                                        title='Do you agree to the above, confirming that it all true, accurate and complete?'
+                                        title='Do you agree to the above, confirming that it is all true, accurate, and complete?'
                                         value={form.fields['finalConfirmation']}
                                         onChange={setField('finalConfirmation')}
                                         errors={get('finalConfirmation', [], paramErrors)}
