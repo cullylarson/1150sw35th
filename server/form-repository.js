@@ -5,6 +5,7 @@ const {randomString} = require('@app/lib/rando')
 
 const prepareResult = getParams({
     id: [undefined, toInt(undefined)],
+    publicIdentifier: ['', toString],
     name: ['', toString],
     email: ['', toString],
     data: ['', toString],
@@ -39,8 +40,13 @@ const add = (pool, data) => {
         .then(get(['results', 'insertId'], undefined))
 }
 
+const remove = (pool, id) => {
+    return query(pool, 'DELETE FROM applications WHERE id = ?', [id])
+}
+
 module.exports = {
     getOne,
     getOneByPublicId,
     add,
+    remove,
 }

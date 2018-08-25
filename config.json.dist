@@ -8,10 +8,15 @@
     "api": {
         "baseUrl": ""
     },
+    "view": {
+        "baseUrl": ""
+    },
     "contact": {
         "email": "",
         "phone": ""
     },
-    "notify": [
-    ]
+    "notify": {
+        "from": "",
+        "recipients": ""
+    }
 }

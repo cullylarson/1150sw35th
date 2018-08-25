@@ -4,6 +4,7 @@ const {getParams} = require('@app/lib/params')
 const {responseFromValidationResult, responseError} = require('@app/lib/response')
 const formRepo = require('./form-repository')
 const validator = require('./form-validator')
+const {sendEntryNotification} = require('./form-email')
 
 const getFormParams = getParams({
     firstName: ['', toString],
@@ -161,7 +162,7 @@ const getFormParams = getParams({
 })
 
 module.exports = {
-    submit: (pool) => (req, res) => {
+    submit: (pool, viewBaseUrl, notifyFrom, notifyRecipients) => (req, res) => {
         const params = getFormParams(req.body)
 
         validator.validateAdd(pool, params)
@@ -173,18 +174,29 @@ module.exports = {
                 }
                 else {
                     formRepo.add(pool, params)
-                        .then(id => res.json({...params, id}))
-                        .catch(_ => {
+                        .then(id => formRepo.getOne(pool, id))
+                        .then(entry => {
+                            return sendEntryNotification(viewBaseUrl, notifyFrom, notifyRecipients, entry)
+                                .then(() => entry)
+                        })
+                        .then(entry => {
+                            res.json({...params})
+                        })
+                        .catch(err => {
+                            console.error(err)
+
                             res
                                 .status(500)
-                                .json(responseError(messageObj('database-error', 'Something went wrong and your application could not be submitted. Please try again.' + _)))
+                                .json(responseError(messageObj('database-error', 'Something went wrong and your application could not be submitted. Please try again.')))
                         })
                 }
             })
-            .catch(_ => {
+            .catch(err => {
+                console.error(err)
+
                 res
                     .status(500)
-                    .json(responseError(messageObj('database-error', 'Something went wrong and your application could not be submitted. Please try again.' + _)))
+                    .json(responseError(messageObj('database-error', 'Something went wrong and your application could not be submitted. Please try again.')))
             })
     },
 }

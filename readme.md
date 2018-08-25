@@ -20,3 +20,30 @@ Copy `config.json.dist` to `config.json` and edit it.
 npm run client:build
 tar cf - build config.json server node_modules package.json | gzip -> 1150.tgz
 ```
+
+## Example `config.json`
+
+```
+{
+    "db": {
+        "host": "db",
+        "user": "dev",
+        "pass": "dev",
+        "name": "dev"
+    },
+    "api": {
+        "baseUrl": "http://localhost:3020/api"
+    },
+    "view": {
+        "baseUrl": "http://localhost:3020/view"
+    },
+    "contact": {
+        "email": "me@example.com",
+        "phone": "555-555-5555"
+    },
+    "notify": {
+        "from": "Your Name <no-reply@example.com>",
+        "recipients": "me@example.com, another-person@example.com"
+    }
+}
+```

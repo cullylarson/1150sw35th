@@ -76,7 +76,7 @@ const staticPath = path.resolve(__dirname, '../build/client/')
 // serves all static files
 app.use(express.static(staticPath))
 
-app.post('/api/submit', bodyParser.json(), apiController.submit(pool))
+app.post('/api/submit', bodyParser.json(), apiController.submit(pool, config.view.baseUrl, config.notify.from, config.notify.recipients))
 app.get('/view/:publicId', entryController.view(pool))
 
 // all other paths defer to the SPA
