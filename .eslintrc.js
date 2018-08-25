@@ -1,10 +1,10 @@
 module.exports = {
-    'extends': ['standard', 'standard-react'],
+    'extends': ['standard', 'standard-preact'],
     'parser': 'babel-eslint',
     'env': {
         'browser': true,
         'es6': true,
-        'jquery': true,
+        'jquery': false,
     },
     'parserOptions': {
         'ecmaVersion': 6,

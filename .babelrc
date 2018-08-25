@@ -11,13 +11,16 @@
   }]],
   "env": {
     "test": {
-      "presets": ["env", "react"]
+      "presets": ["env", "preact"]
     }
   },
   "plugins": [
     "syntax-dynamic-import",
     "transform-object-rest-spread",
     "babel-plugin-transform-class-properties",
-    "transform-runtime"
+    "transform-runtime",
+    ["transform-react-jsx", {
+      "pragma": "h",
+    }]
   ]
 }

@@ -1,6 +1,5 @@
-import React from 'react'
-import {render} from 'react-dom'
-import {Provider} from 'react-redux'
+import {h, render} from 'preact'
+import {Provider} from 'preact-redux'
 import {createStore, applyMiddleware, compose as reduxCompose} from 'redux'
 import thunk from 'redux-thunk'
 import rootReducer from '@app/root-reducer'

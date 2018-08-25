@@ -1,5 +1,5 @@
-import React from 'react'
-import {connect} from 'react-redux'
+import {h} from 'preact'
+import {connect} from 'preact-redux'
 import Form from '@app/form/Form'
 
 import './style/app.css'

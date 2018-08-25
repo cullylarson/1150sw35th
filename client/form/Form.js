@@ -1,6 +1,6 @@
-import React from 'react'
+import {h} from 'preact'
 import {bindActionCreators} from 'redux'
-import {connect} from 'react-redux'
+import {connect} from 'preact-redux'
 import {preventDefault} from '@common/lib/events'
 import {sendForm} from './actions'
 
