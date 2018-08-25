@@ -185,8 +185,6 @@ const actionsMap = {
             },
             send: {
                 ...state.send,
-                errors: [],
-                paramErrors: {},
             },
         }
     },
