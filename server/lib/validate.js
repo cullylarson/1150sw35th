@@ -1,7 +1,7 @@
 const R = require('ramda')
-const {messageObj} = require('@common/lib/messages')
-const {map, reduce, get, liftA} = require('@common/lib/f')
-const {then, allP} = require('@common/lib/promise')
+const {messageObj} = require('@app/lib/messages')
+const {map, reduce, get, liftA} = require('@app/lib/f')
+const {then, allP} = require('@app/lib/promise')
 
 const validate = (generalValidators, paramValidators, params) => {
     const hasParamErrors = reduce((acc, results) => {

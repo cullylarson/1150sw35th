@@ -20,7 +20,6 @@ module.exports = (_, argv) => {
             resolve: {
                 alias: {
                     '@app': path.resolve(__dirname, 'client'),
-                    '@common': path.resolve(__dirname, 'common'),
                 },
             },
             module: {

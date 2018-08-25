@@ -1,6 +1,14 @@
-import {scrollTop} from '@common/lib/scroll'
+import {scrollTop} from '@app/lib/scroll'
 import * as api from './api'
 import * as actionTypes from './action-types'
+
+export function setFormField(name, value) {
+    return {
+        type: actionTypes.SET_FORM_PARAM,
+        name,
+        value,
+    }
+}
 
 export function clearForm() {
     return {

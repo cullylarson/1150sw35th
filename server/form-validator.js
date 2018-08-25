@@ -1,11 +1,12 @@
-const {validate, customMessages} = require('@common/lib/validate')
-const validateNotEmpty = require('@common/lib/validators/validateNotEmpty')
+const {validate, customMessages} = require('@app/lib/validate')
+const validateNotEmpty = require('@app/lib/validators/validateNotEmpty')
+const validateEmail = require('@app/lib/validators/validateEmail')
 
 const validateGeneral = (pool, id, params) => {
     return validate([
     ], {
         name: [validateNotEmpty],
-        email: [validateNotEmpty],
+        email: [validateNotEmpty, validateEmail],
     }, params)
 }
 

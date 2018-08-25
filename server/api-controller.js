@@ -1,12 +1,13 @@
-const {messageObj} = require('@common/lib/messages')
-const {toString} = require('@common/lib/f')
-const {getParams} = require('@common/lib/params')
-const {responseFromValidationResult, responseError} = require('@common/lib/response')
+const {messageObj} = require('@app/lib/messages')
+const {toString} = require('@app/lib/f')
+const {getParams} = require('@app/lib/params')
+const {responseFromValidationResult, responseError} = require('@app/lib/response')
 const formRepo = require('./form-repository')
 const validator = require('./form-validator')
 
 const getFormParams = getParams({
     name: ['', toString],
+    email: ['', toString],
 })
 
 module.exports = {
@@ -26,14 +27,14 @@ module.exports = {
                         .catch(_ => {
                             res
                                 .status(500)
-                                .json(responseError(messageObj('database-error', 'Something went wrong and your application could not be submitted. Please try again.')))
+                                .json(responseError(messageObj('database-error', 'Something went wrong and your application could not be submitted. Please try again.' + _)))
                         })
                 }
             })
             .catch(_ => {
                 res
                     .status(500)
-                    .json(responseError(messageObj('database-error', 'Something went wrong and your application could not be submitted. Please try again.')))
+                    .json(responseError(messageObj('database-error', 'Something went wrong and your application could not be submitted. Please try again.' + _)))
             })
     }
 }

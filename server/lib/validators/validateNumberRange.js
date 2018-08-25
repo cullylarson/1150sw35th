@@ -1,5 +1,5 @@
 const {curry} = require('ramda')
-const {messageObj} = require('@common/lib/messages')
+const {messageObj} = require('@app/lib/messages')
 
 module.exports = curry((smallest, largest, value, params) => {
     return value < smallest || value > largest

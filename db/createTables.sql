@@ -5,4 +5,4 @@ CREATE TABLE applications (
     params              TEXT,
     created             DATETIME,
     PRIMARY KEY (id)
-) ENGINE=InnoDB CHARACTER SET=utf8mb4 COLLATE=utf8mb4_general_ci' 
+) ENGINE=InnoDB CHARACTER SET=utf8mb4 COLLATE=utf8mb4_general_ci

@@ -1,7 +1,7 @@
 const R = require('ramda')
-const {map, get, toInt} = require('@common/lib/f')
-const {messageObj} = require('@common/lib/messages')
-const {query} = require('@common/lib/mysql')
+const {map, get, toInt} = require('@app/lib/f')
+const {messageObj} = require('@app/lib/messages')
+const {query} = require('@app/lib/mysql')
 
 module.exports = R.curry((pool, tableName, idColumnName, ignoreId, paramNameToColumnName, _, params) => {
     const whereInfo = R.compose(

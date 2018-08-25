@@ -11,8 +11,7 @@
         "client:watch": "npm run client:clean && webpack --mode development --progress --colors --watch"
     },
     "_moduleAliases": {
-        "@app": "./server",
-        "@common": "./common"
+        "@app": "./server"
     },
     "repository": {
         "type": "git",

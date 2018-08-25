@@ -1,30 +1,52 @@
 import {h} from 'preact'
 import {bindActionCreators} from 'redux'
 import {connect} from 'preact-redux'
-import {preventDefault} from '@common/lib/events'
-import {sendForm} from './actions'
+import {preventDefault} from '@app/lib/events'
+import {get} from '@app/lib/f'
+import {setFormField, sendForm} from './actions'
+import FormText from '@app/components/FormText'
+import Messages from '@app/components/Messages'
 
 const mapStateToProps = ({form}) => ({form})
 
 const mapDispatchToProps = (dispatch) => ({
     actions: bindActionCreators({
+        setFormField,
         sendForm,
     }, dispatch),
 })
 
 const Form = ({form, actions}) => {
     const handleSubmit = preventDefault(() => {
-        actions.sendForm({name: 'asdf'})
+        actions.sendForm(form.fields)
     })
 
+    const paramErrors = form.send.paramErrors
+
+    const setField = (name) => e => actions.setFormField(name, e.currentTarget.value)
+
     return (
-        <form onSubmit={handleSubmit}>
-            <div className='form-group'>
-                <label htmlFor='email'>Email address</label>
-                <input type='email' className='form-control' id='email' name='email' />
-            </div>
-            <button type='submit' className='btn btn-primary'>Submit</button>
-        </form>
+        <div className='container'><div className='row'><div className='col-sm'>
+            <Messages error={form.send.errors} />
+
+            <form onSubmit={handleSubmit}>
+                <FormText
+                    name='name'
+                    title='Name'
+                    value={form.fields.name}
+                    onChange={setField('name')}
+                    errors={get('name', [], paramErrors)}
+                />
+                <FormText
+                    name='email'
+                    title='Email'
+                    value={form.fields.email}
+                    onChange={setField('email')}
+                    errors={get('email', [], paramErrors)}
+                />
+                <button type='submit' className='btn btn-primary'>Submit</button>
+            </form>
+        </div></div></div>
     )
 }
 

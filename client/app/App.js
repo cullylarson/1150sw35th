@@ -15,9 +15,9 @@ const App = () => {
                 <h3>Corvallis, OR 97333</h3>
 
                 <h2>Rental Application</h2>
-
-                <Form />
             </div></div></div>
+
+            <Form />
         </div>
     )
 }

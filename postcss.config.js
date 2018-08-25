@@ -6,7 +6,6 @@ module.exports = {
         'postcss-import': {
             resolve: createResolver({
                 alias: {
-                    '@common': path.resolve(__dirname, 'client/style'),
                 },
             }),
         },

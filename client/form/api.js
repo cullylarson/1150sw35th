@@ -1,4 +1,4 @@
-import {responseData} from '@common/lib/request'
+import {responseData} from '@app/lib/request'
 
 export function sendForm(apiUrl, data) {
     const query = data
