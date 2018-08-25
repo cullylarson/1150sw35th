@@ -7,5 +7,9 @@
     },
     "api": {
         "baseUrl": ""
+    },
+    "contact": {
+        "email": "",
+        "phone": ""
     }
 }

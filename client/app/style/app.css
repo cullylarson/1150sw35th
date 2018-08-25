@@ -1,5 +1,39 @@
+@import './variables.css';
 @import './body.css';
 
 .app-wrapper {
     padding: 20px 0;
+}
+
+header {
+    margin-bottom: 40px;
+
+    h1 {
+        margin-bottom: 0;
+    }
+}
+
+.many-row {
+    border-bottom: 1px solid $border-gray;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+
+    &:last-child {
+        border: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+}
+
+.card {
+    margin-bottom: 30px;
+}
+
+.card-header h4 {
+    margin-bottom: 0;
+}
+
+.photo-slider {
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 30px;
 }

@@ -62,7 +62,11 @@ const pool = createPool({
 })
 
 const clientConfig = {
-    api: config.api,
+    api: {
+        ...config.api,
+        baseUrl: formatApiUrl(config.api.baseUrl),
+    },
+    contact: config.contact,
 }
 
 const staticPath = path.resolve(__dirname, '../build/client/')

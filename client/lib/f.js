@@ -9,6 +9,8 @@ export const reportM = curry((msg, x) => { console.log(msg, x); return x })
 export const liftA = (x) => Array.isArray(x) ? x : [x]
 
 export const has = curry((idx, x) => {
+    if(!Array.isArray(x) && (x === null || typeof x !== 'object')) return false
+
     return Array.isArray(x)
         ? (x[idx] !== void 0)
         : (idx in x)

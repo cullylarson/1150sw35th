@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 const path = require('path')
 const ManifestPlugin = require('webpack-manifest-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = (_, argv) => {
     const mode = argv.mode || 'production'
@@ -56,6 +57,12 @@ module.exports = (_, argv) => {
                         NODE_ENV: JSON.stringify(mode),
                     },
                 }),
+                new CopyWebpackPlugin([
+                    {
+                        from: path.resolve(__dirname, 'client/images'),
+                        to: path.resolve(__dirname, 'build/client/images'),
+                    },
+                ], {})
             ],
         },
     ]
