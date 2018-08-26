@@ -24,7 +24,15 @@ tar cf - build config.json server node_modules package.json | gzip -> 1150.tgz
 _or using rsync_
 
 ```
-rsync -avzh --delete --exclude '/config.json' /local/path/to/1151sw35th/ username@remove-server.com:~/path/to/web/root/
+rsync -avzh --delete --exclude '/config.json' --exclude '/.db' --exclude '/.git' /local/path/to/1151sw35th/ username@remove-server.com:~/path/to/web/root/
+```
+
+### Hacky Way to Run Server
+
+This will start the server, keep it running, and stay running after disconnecting from SSH:
+
+```
+nohup npm run server:forever &
 ```
 
 ## Example `config.json`
