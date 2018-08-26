@@ -1,4 +1,4 @@
-import {scrollTop} from '@app/lib/scroll'
+import {scrollTo} from '@app/lib/scroll'
 import * as api from './api'
 import * as actionTypes from './action-types'
 
@@ -17,7 +17,7 @@ function sendFormRequest() {
 }
 
 function sendFormSuccess(account) {
-    scrollTop()
+    scrollTo(document.getElementById('apply'))
 
     return {
         type: actionTypes.SEND_FORM_SUCCESS,
@@ -26,7 +26,7 @@ function sendFormSuccess(account) {
 }
 
 function sendFormFailure(errors, paramErrors) {
-    scrollTop()
+    scrollTo(document.getElementById('apply'))
 
     return {
         type: actionTypes.SEND_FORM_FAILURE,

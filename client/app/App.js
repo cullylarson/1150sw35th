@@ -2,6 +2,8 @@ import {h} from 'preact'
 import {connect} from 'preact-redux'
 import Form from '@app/form/Form'
 import PhotoSlider from '@app/components/PhotoSlider'
+import {scrollTo} from '@app/lib/scroll'
+import {preventDefault} from '@app/lib/events'
 
 import './style/app.css'
 
@@ -22,6 +24,10 @@ const renderContact = (email, phone) => {
 }
 
 const App = ({config}) => {
+    const handleApplyClick = preventDefault(() => {
+        scrollTo(document.getElementById('apply'))
+    })
+
     return (
         <div className='app-wrapper'>
             <div className='container'><div className='row'><div className='col-sm'>
@@ -30,6 +36,19 @@ const App = ({config}) => {
                     <h4>Corvallis, OR 97333</h4>
 
                     <p>{'2 beds \u00b7 1 bath \u00b7 1,296 sqft'}</p>
+
+                    <p><strong>Details</strong></p>
+
+                    <ul>
+                        <li>Rent: $1,300</li>
+                        <li>Available: now</li>
+                        <li>Washer & dryer in unit</li>
+                        <li>Wood fireplace</li>
+                        <li>Covered deck</li>
+                        <li>Plenty of parking</li>
+                        <li>No pets</li>
+                        <li><a href='#apply' onClick={handleApplyClick}>Apply below</a></li>
+                    </ul>
 
                     {renderContact(config.contact.email, config.contact.phone)}
                 </header>
@@ -50,6 +69,7 @@ const App = ({config}) => {
                 autoSlide={4000}
             />
 
+            <a name='apply' id='apply' />
             <div className='container'><div className='row'><div className='col-sm'>
                 <h2>Rental Application</h2>
             </div></div></div>
