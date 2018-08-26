@@ -83,7 +83,6 @@ const clientConfig = {
         baseUrl: formatApiUrl(config.api.baseUrl),
     },
     contact: config.contact,
-    notify: config.notify,
 }
 
 const staticPath = path.resolve(__dirname, '../build/client/')
