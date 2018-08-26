@@ -28,7 +28,7 @@ const add = (pool, data) => {
     const name = [
         data.firstName,
         data.middleName,
-        data.lastname,
+        data.lastName,
     ].filter(x => !!x).join(' ')
 
     return query(pool, "INSERT INTO applications (version, publicIdentifier, name, email, data, created) VALUES('1', ?, ?, ?, ?, NOW())", [
