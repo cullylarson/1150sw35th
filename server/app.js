@@ -55,6 +55,21 @@ if(!config) process.exit(1)
 // check that the manifest exists
 if(!getManifest()) process.exit(1)
 
+const renderGoogleAnalytics = (trackingId) => {
+    if(!trackingId) return ''
+
+    return `
+<script async src="https://www.googletagmanager.com/gtag/js?id=${trackingId}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '${trackingId}');
+</script>
+    `
+}
+
 const pool = createPool({
     host: config.db.host,
     user: config.db.user,
@@ -89,6 +104,8 @@ app.get('*', (req, res) => {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        ${renderGoogleAnalytics(config.ga.trackingId)}
 
         <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:300,300i,400,400i,500,500i" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">

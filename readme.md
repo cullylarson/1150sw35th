@@ -58,6 +58,9 @@ nohup npm run server:forever &
     "notify": {
         "from": "Your Name <no-reply@example.com>",
         "recipients": "me@example.com, another-person@example.com"
+    },
+    "ga": {
+        "trackingId": "your-google-analytics-tracking-id"
     }
 }
 ```

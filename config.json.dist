@@ -18,5 +18,8 @@
     "notify": {
         "from": "",
         "recipients": ""
+    },
+    "ga": {
+        "trackingId": ""
     }
 }
