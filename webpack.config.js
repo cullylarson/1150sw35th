@@ -62,6 +62,10 @@ module.exports = (_, argv) => {
                         from: path.resolve(__dirname, 'client/images'),
                         to: path.resolve(__dirname, 'build/client/images'),
                     },
+                    {
+                        from: path.resolve(__dirname, 'client/static'),
+                        to: path.resolve(__dirname, 'build/client'),
+                    },
                 ], {})
             ],
         },
