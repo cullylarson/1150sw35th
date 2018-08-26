@@ -21,6 +21,12 @@ npm run client:build
 tar cf - build config.json server node_modules package.json | gzip -> 1150.tgz
 ```
 
+_or using rsync_
+
+```
+rsync -avzh --delete --exclude '/config.json' /local/path/to/1151sw35th/ username@remove-server.com:~/path/to/web/root/
+```
+
 ## Example `config.json`
 
 ```
