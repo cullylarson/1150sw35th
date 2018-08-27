@@ -156,7 +156,7 @@ const render = (entry) => {
                 }
 
                 .card {
-                    margin-bottom: 40px;
+                    margin-bottom: 30px;
                 }
 
                 .container:last-child .card:last-child {
