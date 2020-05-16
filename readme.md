@@ -24,8 +24,10 @@ tar cf - build config.json server node_modules package.json | gzip -> 1150.tgz
 _or using rsync_
 
 ```
-rsync -avzh --delete --exclude '/config.json' --exclude '/.db' --exclude '/.git' /local/path/to/1151sw35th/ username@remove-server.com:~/path/to/web/root/
+rsync -avzh --delete --exclude '/config.json' --exclude '/.db' --exclude '/.git' --exclude '/trash' /local/path/to/1151sw35th/ username@remove-server.com:~/path/to/web/root/
 ```
+
+*NOTE: The trailing slashes in paths are important.*
 
 ### Hacky Way to Run Server
 
