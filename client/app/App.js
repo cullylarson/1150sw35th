@@ -40,14 +40,16 @@ const App = ({config}) => {
                     <p><strong>Details</strong></p>
 
                     <ul>
-                        <li>Rent: $1,395</li>
-                        <li>Available: July 15th, 2020</li>
+                        <li>Rent: $1,300</li>
+                        <li>Available: July 7th, 2020</li>
                         <li>Washer & dryer in unit</li>
                         <li>Wood fireplace</li>
                         <li>Covered deck</li>
                         <li>Large, fenced-in backyard</li>
                         <li>Plenty of parking</li>
                         <li>Dishwasher</li>
+                        <li>Trash pickup and water included</li>
+                        <li>Refundable security deposit: $1,300</li>
                         <li><a href='#apply' onClick={handleApplyClick}>Apply below</a></li>
                     </ul>
 

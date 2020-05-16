@@ -12,15 +12,13 @@ module.exports = {
         }
 
         if(!publicId) {
-            fourOhFour()
-            return
+            return fourOhFour()
         }
 
         formRepo.getOneByPublicId(pool, publicId)
             .then(entry => {
                 if(!entry) {
-                    fourOhFour()
-                    return
+                    return fourOhFour()
                 }
 
                 res.send(entryView.render(entry))
