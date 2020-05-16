@@ -49,6 +49,7 @@ const App = ({config}) => {
                         <li>Plenty of parking</li>
                         <li>Dishwasher</li>
                         <li>Trash pickup and water included</li>
+                        <li>Terms: Minimum 12-month lease</li>
                         <li>Refundable security deposit: $1,300</li>
                         <li><a href='#apply' onClick={handleApplyClick}>Apply below</a></li>
                     </ul>
