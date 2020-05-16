@@ -25,7 +25,7 @@ const getConfig = () => {
 }
 
 const getManifest = (() => {
-    let cachedManifest = undefined
+    let cachedManifest
 
     return () => {
         // don't cache in dev mode; just re-read it every time

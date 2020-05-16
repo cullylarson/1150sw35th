@@ -4,8 +4,8 @@ const dateFns = require('date-fns')
 const yesNo = x => x.toLowerCase() === 'yes'
     ? 'Yes'
     : x.toLowerCase() === 'no'
-    ? 'No'
-    : '&mdash;'
+        ? 'No'
+        : '&mdash;'
 
 const d = x => x ? dateFns.format(x, 'MMM Do, YYYY') : ''
 

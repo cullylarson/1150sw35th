@@ -1,5 +1,5 @@
 const randomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min
-const characters = "abcdefghijklmonpqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+const characters = 'abcdefghijklmonpqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
 
 const randomString = (length) => {
     let x = ''

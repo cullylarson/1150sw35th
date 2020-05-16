@@ -26,6 +26,5 @@ module.exports = {
             .catch(_ => {
                 res.status(500).send('Error.')
             })
-
     },
 }
