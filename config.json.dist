@@ -19,6 +19,12 @@
         "from": "",
         "recipients": ""
     },
+    "twilio": {
+        "accountSid": "",
+        "authToken": ""
+        "from": "",
+        "to": ""
+    },
     "ga": {
         "trackingId": ""
     }

@@ -4,7 +4,7 @@ const {getParams} = require('@app/lib/params')
 const {responseFromValidationResult, responseError} = require('@app/lib/response')
 const formRepo = require('./form-repository')
 const validator = require('./form-validator')
-const {sendEntryNotification} = require('./form-email')
+const {sendEntryNotificationEmail, sendEntryNotificationSms} = require('./form-notify')
 
 const getFormParams = getParams({
     firstName: ['', toString],
@@ -159,7 +159,7 @@ const getFormParams = getParams({
 })
 
 module.exports = {
-    submit: (pool, viewBaseUrl, notifyFrom, notifyRecipients) => (req, res) => {
+    submit: (pool, viewBaseUrl, notifyFrom, notifyRecipients, twilioAccountSid, twilioAuthToken, smsFrom, smsTo) => (req, res) => {
         const params = getFormParams(req.body)
 
         validator.validateAdd(pool, params)
@@ -173,7 +173,10 @@ module.exports = {
                     formRepo.add(pool, params)
                         .then(id => formRepo.getOne(pool, id))
                         .then(entry => {
-                            return sendEntryNotification(viewBaseUrl, notifyFrom, notifyRecipients, entry)
+                            return Promise.all([
+                                sendEntryNotificationEmail(viewBaseUrl, notifyFrom, notifyRecipients, entry),
+                                sendEntryNotificationSms(viewBaseUrl, twilioAccountSid, twilioAuthToken, smsFrom, smsTo, entry),
+                            ])
                                 .then(() => entry)
                         })
                         .then(entry => {

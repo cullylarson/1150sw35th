@@ -6,6 +6,7 @@
         "server:start": "NODE_ENV=production node server/app.js",
         "server:watch": "forever --watch --minUptime 2000 --spinSleepTime 5000 --watchDirectory='./server/' server/app.js",
         "server:forever": "forever --minUptime 1000 --spinSleepTime 2000 server/app.js",
+        "server:lint": "esw --watch --color ./server",
         "client:clean": "rm -rf build/client",
         "client:build": "npm run client:clean && webpack --mode production",
         "client:dev": "npm run client:clean && webpack --mode development",
@@ -26,7 +27,8 @@
         "module-alias": "^2.1.0",
         "mysql": "^2.16.0",
         "nodemailer": "^4.6.8",
-        "ramda": "^0.25.0"
+        "ramda": "^0.25.0",
+        "twilio": "^3.43.1"
     },
     "devDependencies": {
         "babel-core": "^6.26.3",
@@ -45,6 +47,7 @@
         "eslint-config-standard-preact": "^1.1.6",
         "eslint-loader": "^2.0.0",
         "eslint-plugin-react": "^7.8.2",
+        "eslint-watch": "^6.0.1",
         "forever": "^0.15.3",
         "hammerjs": "^2.0.8",
         "postcss-calc": "^6.0.1",
