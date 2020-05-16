@@ -211,11 +211,6 @@ const render = (entry) => {
                             <div class='col-sm-4'><label>Last</label><b>${escape(data.lastName)}</b></div>
                         </div>
                         <div class='row'>
-                            <div class='col-sm-4'><label>Social Security #</label><b>${escape(data.ssn)}</b></div>
-                            <div class='col-sm-4'><label>Drivers License #</label><b>${escape(data.driversLicenseNumber)}</b></div>
-                            <div class='col-sm-4'><label>Drivers License State</label><b>${escape(data.driversLicenseState)}</b></div>
-                        </div>
-                        <div class='row'>
                             <div class='col-sm-4'><label>Phone #</label><b>${escape(data.phone)}</b></div>
                             <div class='col-sm-4'><label>Alternative Phone #</label><b>${escape(data.phoneAlt)}</b></div>
                             <div class='col-sm-4'><label>Email Address</label><b>${escape(data.email)}</b></div>

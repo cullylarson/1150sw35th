@@ -368,35 +368,6 @@ const Form = ({form, actions}) => {
                             <div className='row'>
                                 <div className='col-md-4'>
                                     <FormText
-                                        name='ssn'
-                                        title='Social Security #'
-                                        value={form.fields.ssn}
-                                        onChange={setField('ssn')}
-                                        errors={get('ssn', [], paramErrors)}
-                                    />
-                                </div>
-                                <div className='col-md-4'>
-                                    <FormText
-                                        name='driversLicenseNumber'
-                                        title='Drivers License #'
-                                        value={form.fields.driversLicenseNumber}
-                                        onChange={setField('driversLicenseNumber')}
-                                        errors={get('driversLicenseNumber', [], paramErrors)}
-                                    />
-                                </div>
-                                <div className='col-md-4'>
-                                    <FormText
-                                        name='driversLicenseState'
-                                        title='Drivers License State'
-                                        value={form.fields.driversLicenseState}
-                                        onChange={setField('driversLicenseState')}
-                                        errors={get('driversLicenseState', [], paramErrors)}
-                                    />
-                                </div>
-                            </div>
-                            <div className='row'>
-                                <div className='col-md-4'>
-                                    <FormText
                                         name='phone'
                                         title='Phone Number'
                                         value={form.fields.phone}
