@@ -1010,7 +1010,7 @@ const Form = ({form, actions}) => {
                                 <div className='col-md-6'>
                                     <FormYesNo
                                         name={'questionBrokenLease'}
-                                        title='Has applicant ever been broken a lease?'
+                                        title='Has applicant ever broken a lease?'
                                         value={form.fields['questionBrokenLease']}
                                         onChange={setField('questionBrokenLease')}
                                         errors={get('questionBrokenLease', [], paramErrors)}

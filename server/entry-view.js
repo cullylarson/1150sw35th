@@ -404,7 +404,7 @@ const render = (entry) => {
                             <div class='col-sm-6'><label>Has applicant ever moved owing rent or damages to an apartment?</label><b>${yesNo(data.questionMovedOwingMoney)}</b></div>
                         </div>
                         <div class='row'>
-                            <div class='col-sm-6'><label>Has applicant ever been broken a lease?</label><b>${yesNo(data.questionBrokenLease)}</b></div>
+                            <div class='col-sm-6'><label>Has applicant ever broken a lease?</label><b>${yesNo(data.questionBrokenLease)}</b></div>
                             <div class='col-sm-6'><label>Is the total move-in amount available now (rent and deposit)?</label><b>${yesNo(data.questionMoveInAmountAvailable)}</b></div>
                         </div>
                     </div>
